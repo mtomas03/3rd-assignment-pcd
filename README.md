@@ -2,9 +2,9 @@ PCD a.y. 2025-2026 - ISI LM UNIBO - Cesena Campus
 
 # Assignment #03 `
 
-v2.0.0-20260506
+v2.0.1-20260506
 
-The assignment is about concurrent programming based on message passing, synchronous message passing based on processes and channels (first exercise, in Go) and asynchronous message passing based on actors (second exercise, using Apache Pekko).
+The assignment is about concurrent programming based on message passing, in particular asynchronous message passing based on actors (first exercise) and synchronous message passing based on processes and channels (second exercise).
 
 
 ### Exercise #1 - *Smart Home Alarm System* 
