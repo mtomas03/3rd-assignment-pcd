@@ -90,7 +90,7 @@ object ControlUnitActor {
                      config: SystemConfig,
                      siren: ActorRef[SirenActor.Command],
                      timers: TimerScheduler[Command],
-                     activeZones: Option[Set[String]]
+                     activeZones: Option[Set[Zone]]
                    ): Behavior[Command] =
     Behaviors.receive { (ctx, msg) =>
       msg match {
@@ -121,7 +121,7 @@ object ControlUnitActor {
                           config: SystemConfig,
                           siren: ActorRef[SirenActor.Command],
                           timers: TimerScheduler[Command],
-                          activeZones: Option[Set[String]]
+                          activeZones: Option[Set[Zone]]
                         ): Behavior[Command] =
     Behaviors.receive { (ctx, msg) =>
       msg match {
