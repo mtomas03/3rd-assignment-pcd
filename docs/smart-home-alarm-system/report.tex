@@ -16,7 +16,7 @@ The system must process asynchronous messages from three independent sources: pe
 
 \section{General strategy}
 
-The implementation follows the Actor model via Pekko Typed, organizing actors into a tree managed by \texttt{UserGuardian}. All domain logic and state transitions are centralized inside \texttt{ControlUnitActor}, while peripheral actors (\texttt{SensorActor}, \texttt{KeypadActor}, \texttt{SirenActor}) communicate exclusively with the \texttt{ControlUnitActor} and never directly with each other. All interactions, between actors, rely on asynchronous message passing, structured according to the responsibilities of each actor:
+The implementation follows the Actor model using Apache Pekko, organizing actors into a tree managed by \texttt{UserGuardian}. All domain logic and state transitions are centralized inside \texttt{ControlUnitActor}, while peripheral actors (\texttt{SensorActor}, \texttt{KeypadActor}, \texttt{SirenActor}) communicate exclusively with the \texttt{ControlUnitActor} and never directly with each other. All interactions, between actors, rely on asynchronous message passing, structured according to the responsibilities of each actor:
 \begin{itemize}
 	\item \textbf{\texttt{SensorActor}} represents physical detection devices (motion or door/window sensors). When triggered, it sends a message to \texttt{ControlUnitActor} specifying which sensor and zone have detected activity.
 	\item \textbf{\texttt{KeypadActor}} represents the numeric keypad. It forwards user actions (full or partial arming requests and PIN entries) directly to \texttt{ControlUnitActor}.
